@@ -1,3 +1,122 @@
 [gd_scene format=3 uid="uid://cpenpuh4omcdc"]
 
-[node name="MainMenu" type="Node2D" unique_id=325475322]
+[ext_resource type="FontFile" uid="uid://ildhn3aqxgr2" path="res://assets/fonts/nexa/Nexa-Heavy.ttf" id="1_ekxnf"]
+[ext_resource type="FontFile" uid="uid://c6wotunncp8sq" path="res://assets/fonts/nexa/Nexa-ExtraLight.ttf" id="2_bqqt6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1574"]
+
+[node name="main_menu" type="Control" unique_id=881478428]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1575046328]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_f1574")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1082188074]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=204332640]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 120
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1738307182]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ekxnf")
+theme_override_font_sizes/font_size = 128
+text = "Mercador"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1679600665]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1063691966]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer" unique_id=2027213190]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 48
+text = "Email"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer" unique_id=1971634858]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "iaralinda@gmail.com"
+alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1346905261]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2" unique_id=258268036]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 48
+text = "Senha"
+
+[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1397576741]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "********"
+alignment = 1
+secret = true
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2" unique_id=2043338569]
+custom_minimum_size = Vector2(200, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 32
+text = "Mostrar"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1490306538]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1261333582]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=102126209]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 64
+text = "Entrar"
+
+[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1854585260]
+custom_minimum_size = Vector2(400, 120)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 64
+text = "Cadastrar"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1636064560]
+custom_minimum_size = Vector2(550, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 64
+text = "Esqueci a Senha"
