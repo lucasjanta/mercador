@@ -26,6 +26,8 @@ func _on_register_pressed():
 func _on_FirebaseAuth_login_succeeded(auth):
 		# You do not need to call get_user_data() here, as auth is the same variable
 	print(auth)
+	Global.auth_info = auth
+	get_tree().change_scene_to_file("res://scenes/home.tscn")
 	
 func on_login_failed(error_code, message):
 	if message == "INVALID_EMAIL":
