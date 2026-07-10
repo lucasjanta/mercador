@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cpenpuh4omcdc"]
 
+[ext_resource type="Script" uid="uid://bhxsbfy13l6fl" path="res://scripts/main_menu.gd" id="1_bqqt6"]
 [ext_resource type="FontFile" uid="uid://ildhn3aqxgr2" path="res://assets/fonts/nexa/Nexa-Heavy.ttf" id="1_ekxnf"]
 [ext_resource type="FontFile" uid="uid://c6wotunncp8sq" path="res://assets/fonts/nexa/Nexa-ExtraLight.ttf" id="2_bqqt6"]
 
@@ -12,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_bqqt6")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1575046328]
 layout_mode = 1
@@ -55,7 +57,7 @@ theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 48
 text = "Email"
 
-[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer" unique_id=1971634858]
+[node name="EmailInput" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer" unique_id=1971634858]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
@@ -73,7 +75,7 @@ theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 48
 text = "Senha"
 
-[node name="LineEdit" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1397576741]
+[node name="PasswordInput" type="LineEdit" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2" unique_id=1397576741]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
@@ -82,7 +84,7 @@ placeholder_text = "********"
 alignment = 1
 secret = true
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2" unique_id=2043338569]
+[node name="ShowButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/VBoxContainer2" unique_id=2043338569]
 custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -90,16 +92,19 @@ theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 32
 text = "Mostrar"
 
-[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1490306538]
-custom_minimum_size = Vector2(0, 40)
+[node name="StatusLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=565039832]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 32
+text = ".a"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1261333582]
 layout_mode = 2
 theme_override_constants/separation = 40
 alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=102126209]
+[node name="LoginButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=102126209]
 custom_minimum_size = Vector2(400, 120)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
@@ -120,3 +125,5 @@ size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 64
 text = "Esqueci a Senha"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
