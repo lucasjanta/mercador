@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://btf2h07or04f7"]
 
 [ext_resource type="FontFile" uid="uid://ildhn3aqxgr2" path="res://assets/fonts/nexa/Nexa-Heavy.ttf" id="1_krot7"]
+[ext_resource type="Script" uid="uid://ba1d1fyb5s0qa" path="res://scripts/home.gd" id="1_u4wd2"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1574"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjgkw"]
+bg_color = Color(0.9682575, 0.9682575, 0.9682575, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krot7"]
 bg_color = Color(1, 1, 1, 1)
@@ -11,6 +13,42 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u4wd2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.5921569, 0.003921569, 0.90588236, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w18ys"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_reixx"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
 [node name="Home" type="Control" unique_id=1730195031]
 layout_mode = 3
 anchors_preset = 15
@@ -18,6 +56,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_u4wd2")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1780457418]
 layout_mode = 1
@@ -26,7 +65,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/panel = SubResource("StyleBoxFlat_gjgkw")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=138929940]
 layout_mode = 2
@@ -42,6 +81,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1969200580]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_krot7")
 theme_override_font_sizes/font_size = 120
 text = "Mercador"
@@ -61,6 +101,9 @@ custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_krot7")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w18ys")
+theme_override_styles/hover = SubResource("StyleBoxFlat_reixx")
 text = "Produtos"
 
 [node name="MercadosButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1839590671]
@@ -68,6 +111,9 @@ custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_krot7")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w18ys")
+theme_override_styles/hover = SubResource("StyleBoxFlat_reixx")
 text = "Mercados"
 
 [node name="MapaButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1158691379]
@@ -75,6 +121,9 @@ custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_krot7")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w18ys")
+theme_override_styles/hover = SubResource("StyleBoxFlat_reixx")
 text = "Mapa"
 
 [node name="ListaButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1250662373]
@@ -82,6 +131,9 @@ custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_krot7")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w18ys")
+theme_override_styles/hover = SubResource("StyleBoxFlat_reixx")
 text = "Lista de Compras"
 
 [node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=124819549]
@@ -97,3 +149,5 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_krot7")
 theme_override_font_sizes/font_size = 128
 text = "+"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/ProdutosButton" to="." method="_on_produtos_button_pressed"]

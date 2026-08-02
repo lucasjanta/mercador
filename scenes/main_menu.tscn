@@ -111,7 +111,7 @@ theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 64
 text = "Entrar"
 
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1854585260]
+[node name="RegisterButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=1854585260]
 custom_minimum_size = Vector2(400, 120)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
@@ -127,3 +127,4 @@ theme_override_font_sizes/font_size = 64
 text = "Esqueci a Senha"
 
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/LoginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/RegisterButton" to="." method="_on_register_button_pressed"]
