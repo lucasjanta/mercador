@@ -123,7 +123,7 @@ theme_override_constants/separation = 32
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=698685517]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1157173812]
+[node name="ReturnButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1157173812]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_v82e4")
@@ -279,6 +279,7 @@ theme_override_fonts/font = ExtResource("1_v82e4")
 theme_override_font_sizes/font_size = 64
 text = "Salvar"
 
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/ReturnButton" to="." method="_on_return_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/PanelContainer/HBoxContainer/AddMarketButton" to="." method="_on_add_market_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/HBoxContainer2/CancelButton" to="." method="_on_cancel_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/HBoxContainer2/SaveButton" to="." method="_on_save_button_pressed"]

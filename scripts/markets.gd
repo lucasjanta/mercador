@@ -6,20 +6,23 @@ extends Control
 @onready var lat_input: LineEdit = $PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer/LatInput
 @onready var lon_input: LineEdit = $PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer/LonInput
 
-var collection: FirestoreCollection = Firebase.Firestore.collection("markets")
-
-var new_market_data : Dictionary = {}
+func _ready() -> void:
+	populate_markets()
 
 func populate_markets():
 	for child in markets_container.get_children():
 		child.queue_free()
 	
-	#adicionar logica pra popular mercados
+	var documents: Array = await FirebaseManager.get_markets()
+	
+	for document in documents:
+		print("Mercado: ", document.get_value("name"))
+		print("Latitude e Longitude: ", document.get_value("address"))
+		print("Criado em: ", document.get_value("createdAt"))
 
 
 
 func _on_add_market_button_pressed() -> void:
-	print(collection)
 	reset_inputs()
 	add_market_container.visible = true
 	
@@ -36,4 +39,20 @@ func _on_cancel_button_pressed() -> void:
 
 
 func _on_save_button_pressed() -> void:
-	pass # Replace with function body.
+	if market_name_input.text.strip_edges().is_empty():
+		return
+		
+	var document  = await FirebaseManager.add_market(market_name_input.text.strip_edges(), lat_input.text.to_float(), lon_input.text.to_float())
+	if document:
+		print("Mercado criado com sucesso!")
+		print("ID: ", document.doc_name)
+
+		add_market_container.visible = false
+		reset_inputs()
+
+		await populate_markets()
+	else:
+		print("Erro ao criar mercado.")
+
+func _on_return_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/home.tscn")

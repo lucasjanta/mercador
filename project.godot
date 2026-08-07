@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Firebase="*uid://cvb26atjckwlq"
 Global="*uid://b1vted6h1mt0o"
+FirebaseManager="*uid://du5fe71de2hii"
 
 [display]
 
