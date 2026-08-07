@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ddt487dxwjype"]
+
+[ext_resource type="Script" uid="uid://dqu5x8omxgr7s" path="res://scenes/components/market_slot.gd" id="1_am7vl"]
+[ext_resource type="FontFile" uid="uid://ildhn3aqxgr2" path="res://assets/fonts/nexa/Nexa-Heavy.ttf" id="1_kaao1"]
+[ext_resource type="FontFile" uid="uid://c6wotunncp8sq" path="res://assets/fonts/nexa/Nexa-ExtraLight.ttf" id="2_am7vl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_std5t"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[node name="MarketSlot" type="PanelContainer" unique_id=1679971743]
+theme_override_styles/panel = SubResource("StyleBoxFlat_std5t")
+script = ExtResource("1_am7vl")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=233212731]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=725320395]
+layout_mode = 2
+
+[node name="MarketNameLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=379780953]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_kaao1")
+theme_override_font_sizes/font_size = 64
+text = "NomeDoMercado"
+horizontal_alignment = 1
+
+[node name="LastChangeLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=126709939]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_am7vl")
+theme_override_font_sizes/font_size = 32
+text = "LastChange"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1210717355]
+layout_mode = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

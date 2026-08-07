@@ -96,16 +96,6 @@ theme_override_styles/separator = SubResource("StyleBoxFlat_krot7")
 layout_mode = 2
 theme_override_constants/separation = 48
 
-[node name="ProdutosButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1026369129]
-custom_minimum_size = Vector2(0, 160)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_krot7")
-theme_override_font_sizes/font_size = 64
-theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_w18ys")
-theme_override_styles/hover = SubResource("StyleBoxFlat_reixx")
-text = "Produtos"
-
 [node name="MercadosButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1839590671]
 custom_minimum_size = Vector2(0, 160)
 layout_mode = 2
@@ -115,6 +105,16 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_w18ys")
 theme_override_styles/hover = SubResource("StyleBoxFlat_reixx")
 text = "Mercados"
+
+[node name="ProdutosButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1026369129]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_krot7")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_u4wd2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w18ys")
+theme_override_styles/hover = SubResource("StyleBoxFlat_reixx")
+text = "Produtos"
 
 [node name="MapaButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1158691379]
 custom_minimum_size = Vector2(0, 160)
@@ -139,15 +139,5 @@ text = "Lista de Compras"
 [node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=124819549]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1478837557]
-layout_mode = 2
-alignment = 1
-
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=680973818]
-custom_minimum_size = Vector2(250, 200)
-layout_mode = 2
-theme_override_fonts/font = ExtResource("1_krot7")
-theme_override_font_sizes/font_size = 128
-text = "+"
-
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/MercadosButton" to="." method="_on_mercados_button_pressed"]
 [connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/ProdutosButton" to="." method="_on_produtos_button_pressed"]

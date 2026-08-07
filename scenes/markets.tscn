@@ -1,0 +1,284 @@
+[gd_scene format=3 uid="uid://b4278ilhlhm82"]
+
+[ext_resource type="Script" uid="uid://0ifi7pwpnpig" path="res://scripts/markets.gd" id="1_7jfre"]
+[ext_resource type="FontFile" uid="uid://ildhn3aqxgr2" path="res://assets/fonts/nexa/Nexa-Heavy.ttf" id="1_v82e4"]
+[ext_resource type="FontFile" uid="uid://c6wotunncp8sq" path="res://assets/fonts/nexa/Nexa-ExtraLight.ttf" id="2_awxac"]
+[ext_resource type="PackedScene" uid="uid://ddt487dxwjype" path="res://scenes/components/market_slot.tscn" id="3_bt27g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awxac"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jfre"]
+bg_color = Color(0.5931379, 0.0033085078, 0.904413, 1)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bt27g"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3v4o3"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 80
+corner_radius_top_right = 80
+corner_radius_bottom_right = 80
+corner_radius_bottom_left = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ahtnu"]
+bg_color = Color(0.5921569, 0.003921569, 0.90588236, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l16q8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmpih"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 128
+corner_radius_top_right = 128
+corner_radius_bottom_right = 128
+corner_radius_bottom_left = 128
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ckoa"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 128
+corner_radius_top_right = 128
+corner_radius_bottom_right = 128
+corner_radius_bottom_left = 128
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ysm8v"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 128
+corner_radius_top_right = 128
+corner_radius_bottom_right = 128
+corner_radius_bottom_left = 128
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l16q8"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+
+[node name="markets" type="Control" unique_id=1739294598]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7jfre")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1303267247]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_awxac")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1384558480]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1641848690]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=698685517]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1157173812]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_v82e4")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/normal = SubResource("StyleBoxFlat_7jfre")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bt27g")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3v4o3")
+text = "<"
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=803910778]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=149138339]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v82e4")
+theme_override_font_sizes/font_size = 80
+text = "Mercados"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1415835454]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_ahtnu")
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarketsContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1833209770]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="MarketSlot" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/MarketsContainer" unique_id=1679971743 instance=ExtResource("3_bt27g")]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer" unique_id=2141164633]
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_l16q8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/PanelContainer" unique_id=333336448]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="AddMarketButton" type="Button" parent="PanelContainer/MarginContainer/PanelContainer/HBoxContainer" unique_id=1874264607]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_v82e4")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_dmpih")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2ckoa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ysm8v")
+text = "+"
+
+[node name="AddMarketContainer" type="PanelContainer" parent="PanelContainer/MarginContainer" unique_id=1354078624]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_l16q8")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/AddMarketContainer" unique_id=953444031]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 64
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer" unique_id=1879082205]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer" unique_id=1224236362]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_v82e4")
+theme_override_font_sizes/font_size = 64
+text = "Adicionar mercado"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer" unique_id=602782591]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1949963626]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_awxac")
+theme_override_font_sizes/font_size = 64
+text = "Nome:"
+
+[node name="MarketNameInput" type="LineEdit" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/VBoxContainer" unique_id=1130331262]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_v82e4")
+theme_override_font_sizes/font_size = 64
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer" unique_id=1548196803]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=893741760]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_awxac")
+theme_override_font_sizes/font_size = 64
+text = "Geolocalização:"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/VBoxContainer2" unique_id=1584937636]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="LatInput" type="LineEdit" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1110486349]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_v82e4")
+theme_override_font_sizes/font_size = 64
+placeholder_text = "N"
+alignment = 1
+
+[node name="LonInput" type="LineEdit" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer" unique_id=703461650]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_v82e4")
+theme_override_font_sizes/font_size = 64
+placeholder_text = "E"
+alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer" unique_id=984751727]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer" unique_id=662102314]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="CancelButton" type="Button" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=291596548]
+custom_minimum_size = Vector2(400, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_v82e4")
+theme_override_font_sizes/font_size = 64
+text = "Cancelar"
+
+[node name="SaveButton" type="Button" parent="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/HBoxContainer2" unique_id=1359002330]
+custom_minimum_size = Vector2(400, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("1_v82e4")
+theme_override_font_sizes/font_size = 64
+text = "Salvar"
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/PanelContainer/HBoxContainer/AddMarketButton" to="." method="_on_add_market_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/HBoxContainer2/CancelButton" to="." method="_on_cancel_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/HBoxContainer2/SaveButton" to="." method="_on_save_button_pressed"]

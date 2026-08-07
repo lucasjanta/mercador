@@ -11,6 +11,7 @@ func _ready():
 func _on_login_succeeded(user: Dictionary):
 	status_label.text = "Successfully logged in with oAuth2 as: {email}".format({email=user.email})
 	Firebase.Auth.save_auth(user)
+	get_tree().change_scene_to_file("res://scenes/home.tscn")
 
 func _on_login_failed(error_code, message) -> void:
 	print("Google login failed")
