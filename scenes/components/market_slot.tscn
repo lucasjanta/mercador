@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dqu5x8omxgr7s" path="res://scenes/components/market_slot.gd" id="1_am7vl"]
 [ext_resource type="FontFile" uid="uid://ildhn3aqxgr2" path="res://assets/fonts/nexa/Nexa-Heavy.ttf" id="1_kaao1"]
-[ext_resource type="FontFile" uid="uid://c6wotunncp8sq" path="res://assets/fonts/nexa/Nexa-ExtraLight.ttf" id="2_am7vl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_std5t"]
 content_margin_left = 0.0
@@ -35,13 +34,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_kaao1")
 theme_override_font_sizes/font_size = 64
 text = "NomeDoMercado"
-horizontal_alignment = 1
-
-[node name="LastChangeLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=126709939]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_am7vl")
-theme_override_font_sizes/font_size = 32
-text = "LastChange"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="." unique_id=1210717355]

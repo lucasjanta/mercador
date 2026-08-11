@@ -1,11 +1,11 @@
 extends PanelContainer
 @onready var market_name_label: Label = $MarginContainer/VBoxContainer/MarketNameLabel
-@onready var last_change_label: Label = $MarginContainer/VBoxContainer/LastChangeLabel
+var market_id : String
 
 
-func setup(market_name : String, last_change : String):
+func setup(id: String, market_name : String):
+	market_id = id
 	market_name_label.text = market_name
-	last_change_label.text = "Última Mudança: %s" % last_change
 
 
 func _on_button_pressed() -> void:

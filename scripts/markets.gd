@@ -6,6 +6,9 @@ extends Control
 @onready var lat_input: LineEdit = $PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer/LatInput
 @onready var lon_input: LineEdit = $PanelContainer/MarginContainer/AddMarketContainer/MarginContainer/VBoxContainer/VBoxContainer2/HBoxContainer/LonInput
 
+const MARKET_SLOT = preload("uid://ddt487dxwjype")
+
+
 func _ready() -> void:
 	populate_markets()
 
@@ -16,10 +19,10 @@ func populate_markets():
 	var documents: Array = await FirebaseManager.get_markets()
 	
 	for document in documents:
-		print("Mercado: ", document.get_value("name"))
-		print("Latitude e Longitude: ", document.get_value("address"))
-		print("Criado em: ", document.get_value("createdAt"))
-
+		var new_market_slot = MARKET_SLOT.instantiate()
+		markets_container.add_child(new_market_slot)
+		var market_name : String = document.get_value("name")
+		new_market_slot.setup(document.doc_name, market_name)
 
 
 func _on_add_market_button_pressed() -> void:
