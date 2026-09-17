@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dhs1mjrnba7ne"]
 
 [ext_resource type="FontFile" uid="uid://ildhn3aqxgr2" path="res://assets/fonts/nexa/Nexa-Heavy.ttf" id="1_gjgkw"]
+[ext_resource type="Script" uid="uid://kjwocwf50wb3" path="res://scripts/products.gd" id="1_oxc57"]
+[ext_resource type="FontFile" uid="uid://c6wotunncp8sq" path="res://assets/fonts/nexa/Nexa-ExtraLight.ttf" id="3_i6xyx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxc57"]
 content_margin_left = 0.0
@@ -76,6 +78,62 @@ corner_radius_bottom_right = 128
 corner_radius_bottom_left = 128
 corner_detail = 5
 
+[sub_resource type="Animation" id="Animation_jauc1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -120)]
+}
+
+[sub_resource type="Animation" id="Animation_i6xyx"]
+resource_name = "search_bar_in"
+length = 0.39999999999999997
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -120), Vector2(0, 192)]
+}
+
+[sub_resource type="Animation" id="Animation_xyekd"]
+resource_name = "search_bar_out"
+length = 0.39999999999999997
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 192), Vector2(0, -120)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jauc1"]
+_data = {
+&"RESET": SubResource("Animation_jauc1"),
+&"search_bar_in": SubResource("Animation_i6xyx"),
+&"search_bar_out": SubResource("Animation_xyekd")
+}
+
 [node name="products" type="Control" unique_id=412170409]
 layout_mode = 3
 anchors_preset = 15
@@ -83,6 +141,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_oxc57")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=608143385]
 layout_mode = 1
@@ -107,7 +166,7 @@ theme_override_constants/separation = 32
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1974015572]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1608389798]
+[node name="BackButton" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1608389798]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_gjgkw")
@@ -153,7 +212,7 @@ layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/PanelContainer/HBoxContainer" unique_id=761361186]
+[node name="AddProductButton" type="Button" parent="PanelContainer/MarginContainer/PanelContainer/HBoxContainer" unique_id=761361186]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -166,7 +225,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_jauc1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xyekd")
 text = "+"
 
-[node name="Button2" type="Button" parent="PanelContainer/MarginContainer/PanelContainer/HBoxContainer" unique_id=600713270]
+[node name="SearchButton" type="Button" parent="PanelContainer/MarginContainer/PanelContainer/HBoxContainer" unique_id=600713270]
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -178,3 +237,42 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_i6xyx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jauc1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xyekd")
 text = "S"
+
+[node name="PanelContainer2" type="PanelContainer" parent="." unique_id=553826447]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 0
+offset_top = -120.0
+offset_right = 1080.0
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer2" unique_id=229698062]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer2/MarginContainer" unique_id=2115119278]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="SearchInput" type="LineEdit" parent="PanelContainer2/MarginContainer/HBoxContainer" unique_id=661118983]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("3_i6xyx")
+theme_override_font_sizes/font_size = 32
+placeholder_text = "product name"
+alignment = 1
+
+[node name="ConfirmSearchButton" type="Button" parent="PanelContainer2/MarginContainer/HBoxContainer" unique_id=1194201662]
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+text = "S"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=537204897]
+libraries/ = SubResource("AnimationLibrary_jauc1")
+
+[connection signal="pressed" from="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PanelContainer/MarginContainer/PanelContainer/HBoxContainer/SearchButton" to="." method="_on_search_button_pressed"]

@@ -188,6 +188,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_ysm8v")
 text = "+"
 
 [node name="AddMarketContainer" type="PanelContainer" parent="PanelContainer/MarginContainer" unique_id=1354078624]
+visible = false
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_l16q8")
