@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bp4t8jynj1ncr"]
+
+[ext_resource type="FontFile" uid="uid://ildhn3aqxgr2" path="res://assets/fonts/nexa/Nexa-Heavy.ttf" id="1_0ys34"]
+[ext_resource type="Script" uid="uid://bx708oqvy0alx" path="res://scripts/components/product_container.gd" id="1_11hij"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxuu4"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1574"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ie5d1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_texfu"]
+
+[node name="ProductContainer" type="PanelContainer" unique_id=1316174401]
+custom_minimum_size = Vector2(0, 175)
+script = ExtResource("1_11hij")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1691827963]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1120861001]
+layout_mode = 2
+
+[node name="ProductNameLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1533575095]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0ys34")
+theme_override_font_sizes/font_size = 48
+text = "Manteiga xyz"
+visible_characters = 18
+visible_ratio = 1.5
+
+[node name="Control2" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1055447057]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=2110973855]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=478453993]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0ys34")
+theme_override_font_sizes/font_size = 32
+text = "Last Update"
+horizontal_alignment = 1
+
+[node name="LastUpdateDateLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=139772312]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0ys34")
+theme_override_font_sizes/font_size = 32
+text = "16/09/26"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="MarginContainer/HBoxContainer" unique_id=1606796989]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AveragePriceLabel" type="Label" parent="MarginContainer/HBoxContainer" unique_id=1762307191]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_0ys34")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxuu4")
+text = "~R$4.55"
+
+[node name="SelectProductButton" type="Button" parent="." unique_id=620154696]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ie5d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_texfu")
+
+[connection signal="pressed" from="SelectProductButton" to="." method="_on_select_product_button_pressed"]

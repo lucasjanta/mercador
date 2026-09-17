@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://ildhn3aqxgr2" path="res://assets/fonts/nexa/Nexa-Heavy.ttf" id="1_gjgkw"]
 [ext_resource type="Script" uid="uid://kjwocwf50wb3" path="res://scripts/products.gd" id="1_oxc57"]
 [ext_resource type="FontFile" uid="uid://c6wotunncp8sq" path="res://assets/fonts/nexa/Nexa-ExtraLight.ttf" id="3_i6xyx"]
+[ext_resource type="PackedScene" uid="uid://bp4t8jynj1ncr" path="res://scenes/components/product_container.tscn" id="3_jauc1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxc57"]
 content_margin_left = 0.0
@@ -39,6 +40,23 @@ corner_radius_bottom_left = 80
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ie5d1"]
 bg_color = Color(0.5921569, 0.003921569, 0.90588236, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mxuu4"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1574"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ie5d1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_texfu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mxuu4"]
 
@@ -95,7 +113,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_i6xyx"]
 resource_name = "search_bar_in"
-length = 0.39999999999999997
+length = 0.19999999999999998
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -104,7 +122,7 @@ tracks/0/path = NodePath("PanelContainer2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, -120), Vector2(0, 192)]
@@ -112,7 +130,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_xyekd"]
 resource_name = "search_bar_out"
-length = 0.39999999999999997
+length = 0.19999999999999998
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -121,7 +139,7 @@ tracks/0/path = NodePath("PanelContainer2:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0, 192), Vector2(0, -120)]
@@ -187,9 +205,14 @@ theme_override_fonts/font = ExtResource("1_gjgkw")
 theme_override_font_sizes/font_size = 80
 text = "Produtos"
 
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1143313412]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
 [node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1574912324]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/scrollbar_h_separation = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_ie5d1")
 horizontal_scroll_mode = 0
 vertical_scroll_mode = 2
@@ -198,6 +221,680 @@ vertical_scroll_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="ProductContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1316174401 instance=ExtResource("3_jauc1")]
+layout_mode = 2
+
+[node name="ProductContainer2" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1037987758]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer2" unique_id=926284755]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer2/MarginContainer" unique_id=1211648002]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer2/MarginContainer/HBoxContainer" unique_id=2025779964]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+text = "Manteiga xyz"
+visible_characters = 18
+visible_ratio = 1.5
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer2/MarginContainer/HBoxContainer" unique_id=329125894]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer2/MarginContainer/HBoxContainer" unique_id=958841826]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer2/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1621943521]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "Last Update"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer2/MarginContainer/HBoxContainer/VBoxContainer" unique_id=171241518]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "16/09/26"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer2/MarginContainer/HBoxContainer" unique_id=1627749766]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer2/MarginContainer/HBoxContainer" unique_id=1989012242]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxuu4")
+text = "~R$4.55"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer2" unique_id=875195495]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ie5d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_texfu")
+
+[node name="ProductContainer3" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=895459589]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer3" unique_id=529809535]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer3/MarginContainer" unique_id=2015404193]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer3/MarginContainer/HBoxContainer" unique_id=213700491]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+text = "Manteiga xyz"
+visible_characters = 18
+visible_ratio = 1.5
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer3/MarginContainer/HBoxContainer" unique_id=1841409755]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer3/MarginContainer/HBoxContainer" unique_id=1641853280]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer3/MarginContainer/HBoxContainer/VBoxContainer" unique_id=942647800]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "Last Update"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer3/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2059580357]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "16/09/26"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer3/MarginContainer/HBoxContainer" unique_id=1899552929]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer3/MarginContainer/HBoxContainer" unique_id=1555985592]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxuu4")
+text = "~R$4.55"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer3" unique_id=32776035]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ie5d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_texfu")
+
+[node name="ProductContainer4" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=75600641]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer4" unique_id=1955508079]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer4/MarginContainer" unique_id=764677979]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer4/MarginContainer/HBoxContainer" unique_id=275219411]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+text = "Manteiga xyz"
+visible_characters = 18
+visible_ratio = 1.5
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer4/MarginContainer/HBoxContainer" unique_id=1228591678]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer4/MarginContainer/HBoxContainer" unique_id=1191104946]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer4/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2036648330]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "Last Update"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer4/MarginContainer/HBoxContainer/VBoxContainer" unique_id=342709241]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "16/09/26"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer4/MarginContainer/HBoxContainer" unique_id=1619748080]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer4/MarginContainer/HBoxContainer" unique_id=143097803]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxuu4")
+text = "~R$4.55"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer4" unique_id=1855462839]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ie5d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_texfu")
+
+[node name="ProductContainer5" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=549360852]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer5" unique_id=1295208922]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer5/MarginContainer" unique_id=1364482150]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer5/MarginContainer/HBoxContainer" unique_id=2100718348]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+text = "Manteiga xyz"
+visible_characters = 18
+visible_ratio = 1.5
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer5/MarginContainer/HBoxContainer" unique_id=1902699960]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer5/MarginContainer/HBoxContainer" unique_id=1497265884]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer5/MarginContainer/HBoxContainer/VBoxContainer" unique_id=182690033]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "Last Update"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer5/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1231093297]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "16/09/26"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer5/MarginContainer/HBoxContainer" unique_id=1405527239]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer5/MarginContainer/HBoxContainer" unique_id=660912018]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxuu4")
+text = "~R$4.55"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer5" unique_id=143666727]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ie5d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_texfu")
+
+[node name="ProductContainer6" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1145916267]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer6" unique_id=2057339188]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer6/MarginContainer" unique_id=68972938]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer6/MarginContainer/HBoxContainer" unique_id=2139607181]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+text = "Manteiga xyz"
+visible_characters = 18
+visible_ratio = 1.5
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer6/MarginContainer/HBoxContainer" unique_id=802744402]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer6/MarginContainer/HBoxContainer" unique_id=496994917]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer6/MarginContainer/HBoxContainer/VBoxContainer" unique_id=723677319]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "Last Update"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer6/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1255743560]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "16/09/26"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer6/MarginContainer/HBoxContainer" unique_id=1355036677]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer6/MarginContainer/HBoxContainer" unique_id=219155979]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxuu4")
+text = "~R$4.55"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer6" unique_id=1174280288]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ie5d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_texfu")
+
+[node name="ProductContainer7" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1537773908]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer7" unique_id=1926516633]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer7/MarginContainer" unique_id=1283829777]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer7/MarginContainer/HBoxContainer" unique_id=34565396]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+text = "Manteiga xyz"
+visible_characters = 18
+visible_ratio = 1.5
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer7/MarginContainer/HBoxContainer" unique_id=2041775821]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer7/MarginContainer/HBoxContainer" unique_id=1314204797]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer7/MarginContainer/HBoxContainer/VBoxContainer" unique_id=589762150]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "Last Update"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer7/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1860269516]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "16/09/26"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer7/MarginContainer/HBoxContainer" unique_id=193550569]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer7/MarginContainer/HBoxContainer" unique_id=354805439]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxuu4")
+text = "~R$4.55"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer7" unique_id=1728361866]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ie5d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_texfu")
+
+[node name="ProductContainer8" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=11373515]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer8" unique_id=1508228666]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer8/MarginContainer" unique_id=282222531]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer8/MarginContainer/HBoxContainer" unique_id=575672053]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+text = "Manteiga xyz"
+visible_characters = 18
+visible_ratio = 1.5
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer8/MarginContainer/HBoxContainer" unique_id=2133652866]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer8/MarginContainer/HBoxContainer" unique_id=1025220385]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer8/MarginContainer/HBoxContainer/VBoxContainer" unique_id=632407574]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "Last Update"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer8/MarginContainer/HBoxContainer/VBoxContainer" unique_id=330862237]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "16/09/26"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer8/MarginContainer/HBoxContainer" unique_id=1591659817]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer8/MarginContainer/HBoxContainer" unique_id=2049439427]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxuu4")
+text = "~R$4.55"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer8" unique_id=261735476]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ie5d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_texfu")
+
+[node name="ProductContainer9" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1199004010]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer9" unique_id=1435827797]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer9/MarginContainer" unique_id=1935505088]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer9/MarginContainer/HBoxContainer" unique_id=687194998]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+text = "Manteiga xyz"
+visible_characters = 18
+visible_ratio = 1.5
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer9/MarginContainer/HBoxContainer" unique_id=1103814515]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer9/MarginContainer/HBoxContainer" unique_id=2026770022]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer9/MarginContainer/HBoxContainer/VBoxContainer" unique_id=724261505]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "Last Update"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer9/MarginContainer/HBoxContainer/VBoxContainer" unique_id=2101346037]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "16/09/26"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer9/MarginContainer/HBoxContainer" unique_id=2090117824]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer9/MarginContainer/HBoxContainer" unique_id=2122885504]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxuu4")
+text = "~R$4.55"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer9" unique_id=397030044]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ie5d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_texfu")
+
+[node name="ProductContainer10" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=933280462]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer10" unique_id=953877018]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer10/MarginContainer" unique_id=25482272]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer10/MarginContainer/HBoxContainer" unique_id=799145227]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+text = "Manteiga xyz"
+visible_characters = 18
+visible_ratio = 1.5
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer10/MarginContainer/HBoxContainer" unique_id=345039033]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer10/MarginContainer/HBoxContainer" unique_id=216438210]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer10/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1571149287]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "Last Update"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer10/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1397648237]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "16/09/26"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer10/MarginContainer/HBoxContainer" unique_id=806024088]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer10/MarginContainer/HBoxContainer" unique_id=1571463871]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxuu4")
+text = "~R$4.55"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer10" unique_id=1224749177]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ie5d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_texfu")
+
+[node name="ProductContainer11" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=70709545]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer11" unique_id=1509299605]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer11/MarginContainer" unique_id=60477231]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer11/MarginContainer/HBoxContainer" unique_id=1519298606]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+text = "Manteiga xyz"
+visible_characters = 18
+visible_ratio = 1.5
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer11/MarginContainer/HBoxContainer" unique_id=1478651122]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer11/MarginContainer/HBoxContainer" unique_id=985990627]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer11/MarginContainer/HBoxContainer/VBoxContainer" unique_id=418917268]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "Last Update"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer11/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1799143147]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "16/09/26"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer11/MarginContainer/HBoxContainer" unique_id=2126817981]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer11/MarginContainer/HBoxContainer" unique_id=971175785]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxuu4")
+text = "~R$4.55"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer11" unique_id=1988628749]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ie5d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_texfu")
+
+[node name="ProductContainer12" type="PanelContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1835531387]
+custom_minimum_size = Vector2(0, 175)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer12" unique_id=52832854]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer12/MarginContainer" unique_id=494767699]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer12/MarginContainer/HBoxContainer" unique_id=1479960657]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+text = "Manteiga xyz"
+visible_characters = 18
+visible_ratio = 1.5
+
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer12/MarginContainer/HBoxContainer" unique_id=1791094269]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer12/MarginContainer/HBoxContainer" unique_id=2007589206]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer12/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1392943869]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "Last Update"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer12/MarginContainer/HBoxContainer/VBoxContainer" unique_id=115765439]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 32
+text = "16/09/26"
+horizontal_alignment = 1
+
+[node name="Control" type="Control" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer12/MarginContainer/HBoxContainer" unique_id=678118380]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer12/MarginContainer/HBoxContainer" unique_id=128456901]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_gjgkw")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_mxuu4")
+text = "~R$4.55"
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/ProductContainer12" unique_id=1903653466]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_f1574")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ie5d1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_texfu")
 
 [node name="PanelContainer" type="PanelContainer" parent="PanelContainer/MarginContainer" unique_id=1105044737]
 custom_minimum_size = Vector2(400, 250)
